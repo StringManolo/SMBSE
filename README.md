@@ -227,3 +227,5 @@ sysinfo cli tool
 + Create installer/uninstaller, bins or packages. (Maybe separate the .bashrc in multiple cli tools?) 
 
 + Add vim and sh defualt configs.
+
++ Make richers command set aside @help
