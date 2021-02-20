@@ -211,3 +211,7 @@ sysinfo cli tool
 + Integrate Proot.
 
 + Export folders/config to other systems. 
+
++ Change references to Blue and Green colors for user selected ones.
+
++ Use true colors if supported
