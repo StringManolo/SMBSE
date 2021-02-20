@@ -217,3 +217,5 @@ sysinfo cli tool
 + Use true colors if supported
 
 + System logs
+
++ Config cli tool available to change settings without need to edit .bashrc file directly. (Exported vars?) 
