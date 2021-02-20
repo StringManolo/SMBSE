@@ -215,3 +215,5 @@ sysinfo cli tool
 + Change references to Blue and Green colors for user selected ones.
 
 + Use true colors if supported
+
++ System logs
