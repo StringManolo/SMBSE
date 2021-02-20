@@ -119,7 +119,26 @@ SMBSE/  Main
 
 Most of this directories are easily accesible by using cd _shortNameOfFolder. For example if you run cd _ts you change directory to SMBSE/user/tStorage. Use @help alias to see all the shortcuts to folders.
 ```
-  
+
+Run js easily from terminal:
+```
+Run javascript code. Underliying engine is quickjs.
+std and os modules are imported by defualt.
+Extra run funcion to run commands in a bash subshell.
+Examples:
+js 'console.log(7 *7);'
+
+js 'let hello = "hello world";
+for (let i in hello) {
+  console.log(hello[i]);
+}'
+
+js 'let httpHeaders = run("curl --silent https://example.com -I");     console.log(httpHeaders)' | grep -i server
+
+js 'let homeFiles = run("ls ~").split("\n");
+homeFiles.splice(homeFiles.length - 1);
+console.log("Home files in json:\n" + JSON.stringify(homeFiles, null, 2));'
+```
   
 
 Run C++ easily from terminal:
