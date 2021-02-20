@@ -208,7 +208,7 @@ sysinfo cli tool
 
 + Dependency Manager. 
 
-+ Integrate Proot.
++ Integrate Proot ?.
 
 + Export folders/config to other systems. 
 
@@ -221,3 +221,5 @@ sysinfo cli tool
 + Config cli tool available to change settings without need to edit .bashrc file directly. (Exported vars?) 
 
 + Study the rewrite everything in C++ possibility if that makes a bug performance change. (Performance is fine right now) 
+
++ Find if there is efficient way to use RAM storage (tmpfs alike) in Termux no root. 
