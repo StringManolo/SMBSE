@@ -47,6 +47,8 @@ _hreports      _hig            _hinfo         _hexploits
 _hpostexploit  _hpersistence   _hbruteforce   _hreversing
 _hwireless     _hbalckseo      _sysadmin      _logs
 ```
+  
+  
 
 Default configuration
 ```
@@ -118,6 +120,8 @@ SMBSE/  Main
 Most of this directories are easily accesible by using cd _shortNameOfFolder. For example if you run cd _ts you change directory to SMBSE/user/tStorage. Use @help alias to see all the shortcuts to folders.
 ```
   
+  
+
 Run C++ easily from terminal:
 ```
 Run c/c++ code. The code is being embeed inside an int main funcion with return 0, using namespace std and included iostream by default. Then the code is compiled by g++ and runned after.
