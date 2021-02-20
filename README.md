@@ -1,7 +1,7 @@
 # SMBSE
 Big .bashrc project. 
 
-.bashrc file adding lot of tools, lot of them are unique.
+.bashrc file adding some tools, lot of them are unique.
 
 Depends on some tools like quickjs and g++.
 
