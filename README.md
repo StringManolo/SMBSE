@@ -219,3 +219,5 @@ sysinfo cli tool
 + System logs
 
 + Config cli tool available to change settings without need to edit .bashrc file directly. (Exported vars?) 
+
++ Study the rewrite everything in C++ possibility if that makes a bug performance change. (Performance is fine right now) 
