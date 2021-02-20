@@ -225,3 +225,5 @@ sysinfo cli tool
 + Find if there is efficient way to use RAM storage (tmpfs alike) in Termux no root. 
 
 + Create installer/uninstaller, bins or packages. (Maybe separate the .bashrc in multiple cli tools?) 
+
++ Add vim and sh defualt configs.
