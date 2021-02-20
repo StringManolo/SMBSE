@@ -223,3 +223,5 @@ sysinfo cli tool
 + Study the rewrite everything in C++ possibility if that makes a bug performance change. (Performance is fine right now) 
 
 + Find if there is efficient way to use RAM storage (tmpfs alike) in Termux no root. 
+
++ Create installer/uninstaller, bins or packages. 
