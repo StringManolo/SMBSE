@@ -158,6 +158,47 @@ c++ 'cout << "Need to add more examples xD" << endl;
 
 Allows you to modify login message and logout message easily. 
 
+sysinfo cli tool
+```
+.------------------- LINUX ----------------------.
+  SMBSE Version:         0.1
+  Operative System:      Android
+  Kernel Version:        4.14.116
+  CPU:                   Cortex-A53
+  Architecture:          aarch64
+  Vendor:                ARM
+  CPU MAX MHz:           2189.0000
+  CPU MIN MHz:           480.0000
+  CPU Operation:         32-bit, 64-bit
+  CPU Cores:             8
+  RAM Total:             3.593
+  RAM Available:         1.112
+  Packages Installed:    488
+  Packages Upgradable:   166
+  Public IP:             37.10.141.235
+  System Started:        2021-02-04 17:20:31
+
+
+.------------------- ANDROID --------------------.
+  Model:                 HUAWEI P40 lite E
+  Version:               10.1.0.164C432
+  APN:                   telefonica.es
+  Baseband:              21C20B388S001C000
+  Network Type:          LTE
+  Operator:              Movistar
+  RIL(radio):            android infineon balong-ril 1.0
+  Wi-fi Device Name:     HUAWEI_P40_lite_E-8f0096e
+  DNS1:                  80.58.61.254
+  DPI:                   272
+  Timezone:              Europe/Madrid
+  Board:                 ARTHTHD_L29_VA
+  Platform:              kirin710
+  Build Date:            Tue Dec 22 17,52,35 CST 2020
+  Security Patch:        2020-10-01
+  SDK Ver:               29
+  SDK Min-Ver:           23
+```
+
 ### What i want it to include in future:
 + More functionality realted to special storage folders. 
 
