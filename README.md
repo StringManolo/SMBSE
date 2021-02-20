@@ -166,3 +166,7 @@ Allows you to modify login message and logout message easily.
 + Autoupadate and version tracker. 
 
 + Dependency Manager. 
+
++ Integrate Proot.
+
++ Export folders/config to other systems. 
