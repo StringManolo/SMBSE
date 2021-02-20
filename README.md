@@ -156,7 +156,8 @@ c++ 'cout << "Hey! how are you?";' | grep -i hey
 c++ 'cout << "Need to add more examples xD" << endl;
 ```
 
-### What don't:
-
+Allows you to modify login message and logout message easily. 
 
 ### What i want it to in future:
+More functionality realted to special storage folders. 
+Include small reference tutorials to each language folder. 
