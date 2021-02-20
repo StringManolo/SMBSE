@@ -1,0 +1,2 @@
+# SMBSE
+Big .bashrc project. 
