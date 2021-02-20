@@ -161,5 +161,5 @@ Allows you to modify login message and logout message easily.
 ### What i want it to in future:
 + More functionality realted to special storage folders. 
 + Include small reference tutorials to each language folder. 
-+ Autoupadate and version tracker
-+ 
++ Autoupadate and version tracker. 
++ Dependency Manager. 
