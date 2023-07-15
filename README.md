@@ -156,8 +156,6 @@ c++ 'cout << "Hey! how are you?";' | grep -i hey
 c++ 'cout << "Need to add more examples xD" << endl;
 ```
 
-Allows you to modify login message and logout message easily. 
-
 sysinfo cli tool
 ```bash
 .------------------- LINUX ----------------------.
