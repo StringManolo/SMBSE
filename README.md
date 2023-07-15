@@ -7,7 +7,7 @@ Depends on some tools like quickjs and g++.
 
 ### What does:
 Alias, functions and paths you can call directly. 
-```
+```bash
 l          ls
 la         ls -a
 v          vim
@@ -51,7 +51,7 @@ _hwireless     _hbalckseo      _sysadmin      _logs
   
 
 Default configuration
-```
+```bash
 autocd
 bigger history, ignore duplicate lines
 preserve history between login sessions
@@ -59,7 +59,7 @@ resize terminal output to actual size
 ```
 
 Create a custom file structure to keep same organization between different linux distros, also termux.
-```
+```bash
 SMBSE/bin  Use this folder to add commands and scripts you make. Good way to split system binaries from your own binaries.
 
 SMBSE/.tmp  Ignore this one. The program use the folder internally to manipulate dependencies and temporal files.
@@ -121,7 +121,7 @@ Most of this directories are easily accesible by using cd _shortNameOfFolder. Fo
 ```
 
 Run js easily from terminal:
-```
+```bash
 Run javascript code. Underliying engine is quickjs.
 std and os modules are imported by defualt.
 Extra run funcion to run commands in a bash subshell.
@@ -142,7 +142,7 @@ console.log("Home files in json:\n" + JSON.stringify(homeFiles, null, 2));'
   
 
 Run C++ easily from terminal:
-```
+```bash
 Run c/c++ code. The code is being embeed inside an int main funcion with return 0, using namespace std and included iostream by default. Then the code is compiled by g++ and runned after.
 Examples:
 c++ 'cout << 7 * 7;'
@@ -159,7 +159,7 @@ c++ 'cout << "Need to add more examples xD" << endl;
 Allows you to modify login message and logout message easily. 
 
 sysinfo cli tool
-```
+```bash
 .------------------- LINUX ----------------------.
   SMBSE Version:         0.1
   Operative System:      Android
