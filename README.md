@@ -45,7 +45,7 @@ _sql           _pp             _projects      _h
 _ht            _htoolS         _hanalysis     _hnotes
 _hreports      _hig            _hinfo         _hexploits
 _hpostexploit  _hpersistence   _hbruteforce   _hreversing
-_hwireless     _hbalckseo      _sysadmin      _logs
+_hwireless     _hblackseo      _sysadmin      _logs
 ```
   
   
