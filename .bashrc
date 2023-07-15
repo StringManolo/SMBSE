@@ -9,14 +9,6 @@ SMBSE_LOGME() {
   fi
 }
 
-
-#SMBSE_USE_PROOT() {
-#test if android running and root disabled
-#  pkg install proot-distro;
-#  pkg install ubuntu-20.04;
-#}
-
-
 SMBSE_LOGME "Running \e[1;34mSMBSE 1.0\e[0m\e[1;32m from ~/.bashrc ...";
 
 # if not running interactively, don't do anything
@@ -100,6 +92,7 @@ SMBSE_PROGRAMMING_PYTHON="$SMBSE_PROGRAMMING/python";
 SMBSE_PROGRAMMING_PYTHON2="$SMBSE_PROGRAMMING/python2";
 SMBSE_PROGRAMMING_RUBY="$SMBSE_PROGRAMMING/ruby";
 SMBSE_PROGRAMMING_SQL="$SMBSE_PROGRAMMING/sql";
+SMBSE_PROGRAMMING_TYPESCRIPT="$SMBSE_PROGRAMMING/typescript";
 SMBSE_PROGRAMMING_PROJECTS="$SMBSE_PROGRAMMING/projects";
 SMBSE_LOGME 'All programming folders DONE';
 
@@ -167,6 +160,7 @@ createFolderStructure() {
   createFolder $SMBSE_PROGRAMMING_PYTHON2;
   createFolder $SMBSE_PROGRAMMING_RUBY;
   createFolder $SMBSE_PROGRAMMING_SQL;
+  createFolder $SMBSE_PROGRAMMING_TYPESCRIPT;
   createFolder $SMBSE_PROGRAMMING_PROJECTS;
 
   createFolder $SMBSE_HACKING;
@@ -303,7 +297,7 @@ _hpersistence='"'"''"$SMBSE_HACKING_TOOLS_PERSISTENCE"''"'"'
 _hbruteforce='"'"''"$SMBSE_HACKING_TOOLS_BRUTEFORCE"''"'"'
 _hreversing='"'"''"$SMBSE_HACKING_TOOLS_REVERSING"''"'"'
 _hwireless='"'"''"$SMBSE_HACKING_TOOLS_WIRELESS"''"'"'
-_hbalckseo='"'"''"$SMBSE_HACKING_TOOLS_BLACKSEO"''"'"'
+_hblackseo='"'"''"$SMBSE_HACKING_TOOLS_BLACKSEO"''"'"'
 
 _sysadmin='"'"''"$SMBSE_SYSADMIN"''"'"'
 _logs='"'"''"$SMBSE_SYSADMIN_LOGS"''"'"'
