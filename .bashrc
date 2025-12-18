@@ -753,7 +753,7 @@ try {
   result = `Error running the code: ${err}`;
 }
 
-console.log(result);'"'"' > "$SMBSE_BIN/.js";
+console.log(result);'"'"' > "$SMBSE_BIN/.js"
 js() {
   qjs "$SMBSE_BIN/.js" "$1";
 }
@@ -786,15 +786,14 @@ try {
 return 0;
 }`);
   fd.close();
-  result = run(`g++ -o .internalCppEvaling.cpp .internalCppEvaling.cpp 2>&1 > /dev/null && chmod +775 .internalCppEvaling.cpp 2>&1 > /dev/null && ./.internalCppEvaling.cpp 2>&1 `);
-  run("rm .internalCppEvaling.cpp && 2>&1 > /dev/null");
-
+  result = run(`g++ .internalCppEvaling.cpp -o .internalCppEvaling 2>&1 && chmod +775 .internalCppEvaling 2>&1 && ./.internalCppEvaling 2>&1`);
+  run("rm .internalCppEvaling.cpp .internalCppEvaling 2>&1");
 } catch(err) {
   result = `Error running the code: ${err}`;
 }
 
-console.log(result);'"'"' > "$SMBSE_BIN/.cpp";
-c++() {
+console.log(result);'"'"' > "$SMBSE_BIN/.cpp"
+function c++ { # allow ++ as function name from source
   qjs "$SMBSE_BIN/.cpp" "$1";
 }
 
@@ -816,9 +815,9 @@ sm.log = (msg, delay = 100) => {
 
 sm.log(scriptArgs[1], scriptArgs[2]);
 
-'"'"' > "$SMBSE_BIN/.typewrite.js";
+'"'"' > "$SMBSE_BIN/.typewrite.js"
 typewrite() {
-  qjs "$SMBSE_BIN/.typewrite.js" "$1" "$2";
+  qjs "$SMBSE_BIN/.typewrite.js" "$1" "$2"
 }
 
 # Help function
@@ -1063,9 +1062,9 @@ Type '"'\"'\"'"'@help name'"'\"'\"'"' to find out more about the function '"'\"'
 
 
 
-'"'"' > "$SMBSE_BIN/.help.js";
+'"'"' > "$SMBSE_BIN/.help.js"
 @help() {
-  qjs "$SMBSE_BIN/.help.js" $1 $2;
+  qjs "$SMBSE_BIN/.help.js" "$1" "$2"
 }
 
 
@@ -1145,7 +1144,7 @@ SMBSE_FUNCTION_MOTD() {
       ¦                                                      ¦
       ¦     > js '"'"'console.log(new Date())'"'"';                  ¦
       ¦     > c++ '"'"'#include <stdio.h>                        ¦
-      ¦            printf("Hell%c", 'o');'"'"'                       ¦
+      ¦            printf("Hello ", "World");'"'"'                   ¦
       ¦                                                      ¦"
     #.------------------------------------------------------."
   typewrite '"'"'      .------------------------------------------------------.
