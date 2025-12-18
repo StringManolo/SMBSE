@@ -1,12 +1,21 @@
-# SMBSE
-Big .bashrc project. 
+# SMBSE - Bash Shell Extension
 
-.bashrc file adding some tools, lot of them are unique.
+Enhanced `.bashrc` with unique tools, organized filesystem, and built-in code execution. Designed for Termux and Linux.
 
-Depends on some tools like quickjs and g++.
+## Installation
 
-### What does:
-Alias, functions and paths you can call directly. 
+```bash
+# Backup first
+cp ~/.bashrc ~/.bashrc.backup
+
+# Install via curl (no git required)
+curl 'https://raw.githubusercontent.com/StringManolo/SMBSE/main/.bashrc' -o ~/.bashrc && source ~/.bashrc
+```
+
+---
+
+## Default Aliases
+
 ```bash
 l          ls
 la         ls -a
@@ -23,7 +32,7 @@ gitc       git clone
 folder     du -h --max-depth=1
 h          history
 irc        weechat
-myip       curl http://ifconfig.me/ip
+myip       curl http://ifconfig.me/ip 
 quit       exit
 q          exit
 sb         source ~/.bashrc
@@ -33,7 +42,11 @@ del        compress and move a file to recyclebin
 delete     same as del
 recycle    delete files inside /recyclebin
 recover    recover deleted files and move them to /recovered
+```
 
+## Folder Shortcuts
+
+```bash
 _smbse         _user           _rb            _ns
 _ts            _ss             _os            _bs
 _p             _a              _b             _c
@@ -47,104 +60,51 @@ _hreports      _hig            _hinfo         _hexploits
 _hpostexploit  _hpersistence   _hbruteforce   _hreversing
 _hwireless     _hblackseo      _sysadmin      _logs
 ```
-  
-  
 
-Default configuration
-```bash
-autocd
-bigger history, ignore duplicate lines
-preserve history between login sessions
-resize terminal output to actual size
+---
+
+## Filesystem Structure
+
+```
+SMBSE/bin          # Add your custom scripts/binaries
+SMBSE/.tmp         # Internal use (ignore)
+SMBSE/user/recycleBin    # Deleted files (compressed)
+SMBSE/user/recovered     # Restored files
+SMBSE/user/nStorage      # Normal permanent storage
+SMBSE/user/tStorage      # Auto-cleaning temp storage
+SMBSE/user/sStorage      # Secure (not implemented)
+SMBSE/user/oStorage      # Online (not implemented)
+SMBSE/user/bStorage      # Backup (not implemented)
+SMBSE/user/programming/  # Code organized by language
+SMBSE/user/hacking/tools/  # Security tools by category
+SMBSE/user/sysadmin/logs   # System logs
 ```
 
-Create a custom file structure to keep same organization between different linux distros, also termux.
+**tStorage TTL**: Set `SMBSE_TTL_TSTORAGE="1"` (minutes). Files auto-delete on new terminal session if expired. Timer resets on modification.
+
+---
+
+## Code Execution
+
+### JavaScript (QuickJS)
 ```bash
-SMBSE/bin  Use this folder to add commands and scripts you make. Good way to split system binaries from your own binaries.
-
-SMBSE/.tmp  Ignore this one. The program use the folder internally to manipulate dependencies and temporal files.
-
-SMBSE/user/recycleBin  You can delete files and folders by using the del or the delete command. The deleted files are compressed and moved here afterwards
-You can recover the files by using the recover command.
-Or you can permanently delete all files by running recycle.
-
-SMBSE/user/recovered  The recovered files are available here. You probably want to manually move them to original path using mv command.
-
-SMBSE/user/nStorage  Normal storage, nothing special. Use this folder to store all your files that dont make sense to have anywhere else. Usefull yo avoid have files everywhere.
-
-SMBSE/user/tStorage  The files stored here are going to be removed. Youcan set the time you want to execute the remove. Use the enviroment variable directly from the terminal SMBSE_TTL_TSTORAGE="1" for no less than 1 minute.
-The files are deleted when you login/open a new terminal (in case their time to live expired). The timer restarts when you create or modify a file. Max time files can live is from X to 00:00. Remember that in case you create a file at 23:58 and expect it to be there for longer period of time.
-
-SMBSE/user/sStorage  Secure Storage is not developed yet.
-SMBSE/user/oStorage  Online Storage is not developed yet.
-SMBSE/user/bStorage  Backup Storage is not developed yet.
-SMBSE/user/programming/assembler
-SMBSE/user/programming/bash
-SMBSE/user/programming/c
-SMBSE/user/programming/cpp
-SMBSE/user/programming/css
-SMBSE/user/programming/go
-SMBSE/user/programming/html
-SMBSE/user/programming/java
-SMBSE/user/programming/javascript/browser
-SMBSE/user/programming/javascript/node
-SMBSE/user/programming/javascript/qjs
-SMBSE/user/programming/javascript
-SMBSE/user/programming/lua
-SMBSE/user/programming/perl
-SMBSE/user/programming/php
-SMBSE/user/programming/python
-SMBSE/user/programming/python2
-SMBSE/user/programming/ruby
-SMBSE/user/programming/sql
-SMBSE/user/programming/projects
-SMBSE/user/programming   Keep track of your codes.
-SMBSE/user/hacking/tools/analysis
-SMBSE/user/hacking/tools/notes
-SMBSE/user/hacking/tools/reports
-SMBSE/user/hacking/tools/infogathering
-SMBSE/user/hacking/tools/exploits
-SMBSE/user/hacking/tools/postexploitation
-SMBSE/user/hacking/tools/persistence
-SMBSE/user/hacking/tools/bruteforce
-SMBSE/user/hacking/tools/reversing
-SMBSE/user/hacking/tools/wireless
-SMBSE/user/hacking/tools/blackseo
-SMBSE/user/hacking/tools  Security tools
-SMBSE/user/hacking  Your security related stuff
-SMBSE/user/sysadmin/logs  Move all your logs here and use cd _logs
-SMBSE/user/sysadmin  Your sysadmin stuff go here
-SMBSE/user  User
-SMBSE/  Main
-
-Most of this directories are easily accesible by using cd _shortNameOfFolder. For example if you run cd _ts you change directory to SMBSE/user/tStorage. Use @help alias to see all the shortcuts to folders.
-```
-
-Run js easily from terminal:
-```bash
-Run javascript code. Underliying engine is quickjs.
-std and os modules are imported by defualt.
-Extra run funcion to run commands in a bash subshell.
-Examples:
-js 'console.log(7 *7);'
+js 'console.log(7 * 7);'
 
 js 'let hello = "hello world";
 for (let i in hello) {
   console.log(hello[i]);
 }'
 
-js 'let httpHeaders = run("curl --silent https://example.com -I");     console.log(httpHeaders)' | grep -i server
+js 'let httpHeaders = run("curl --silent https://example.com -I");
+console.log(httpHeaders)' | grep -i server
 
 js 'let homeFiles = run("ls ~").split("\n");
 homeFiles.splice(homeFiles.length - 1);
 console.log("Home files in json:\n" + JSON.stringify(homeFiles, null, 2));'
 ```
-  
 
-Run C++ easily from terminal:
+### C++
 ```bash
-Run c/c++ code. The code is being embeed inside an int main funcion with return 0, using namespace std and included iostream by default. Then the code is compiled by g++ and runned after.
-Examples:
 c++ 'cout << 7 * 7;'
 
 c++ '#include <stdio.h>
@@ -153,11 +113,20 @@ printf("Hello %s", "world");
 
 c++ 'cout << "Hey! how are you?";' | grep -i hey
 
-c++ 'cout << "Need to add more examples xD" << endl;
+c++ 'cout << "Need to add more examples xD" << endl;'
 ```
 
-sysinfo cli tool
+---
+
+## System Info
+
 ```bash
+sysinfo
+```
+
+Shows detailed Linux and Android information (if applicable):
+
+```
 .------------------- LINUX ----------------------.
   SMBSE Version:         0.1
   Operative System:      Android
@@ -176,54 +145,45 @@ sysinfo cli tool
   Public IP:             37.10.141.235
   System Started:        2021-02-04 17:20:31
 
-
 .------------------- ANDROID --------------------.
   Model:                 HUAWEI P40 lite E
   Version:               10.1.0.164C432
   APN:                   telefonica.es
-  Baseband:              21C20B388S001C000
-  Network Type:          LTE
-  Operator:              Movistar
-  RIL(radio):            android infineon balong-ril 1.0
-  Wi-fi Device Name:     HUAWEI_P40_lite_E-8f0096e
-  DNS1:                  80.58.61.254
-  DPI:                   272
-  Timezone:              Europe/Madrid
-  Board:                 ARTHTHD_L29_VA
-  Platform:              kirin710
-  Build Date:            Tue Dec 22 17,52,35 CST 2020
-  Security Patch:        2020-10-01
-  SDK Ver:               29
-  SDK Min-Ver:           23
+  [additional Android info...]
 ```
 
-### What i want it to include in future:
-+ More functionality realted to special storage folders. 
+---
 
-+ Include small reference tutorials to each language folder. 
+## Customization
 
-+ Autoupadate and version tracker. 
+**Files to edit:**
+- `~/SMBSE/alias` - Add persistent aliases
+- `~/SMBSE/extras` - Add custom functions
+- `~/SMBSE/motd` - Customize welcome message
+- `~/SMBSE/logout` - Customize exit behavior
 
-+ Dependency Manager. 
+**Environment Variables:**
+```bash
+SMBSE_TTL_TSTORAGE="1"    # Temp storage TTL (minutes)
+EDITOR='vim'              # Default editor
+```
 
-+ Integrate Proot ?.
+---
 
-+ Export folders/config to other systems. 
+## Requirements
 
-+ Change references to Blue and Green colors for user selected ones.
+- Bash (interactive shell)
+- QuickJS (auto-downloaded on first run)
+- Optional: `vim`, `7z`, `curl`, `lscpu`, `g++`
 
-+ Use true colors if supported
+---
 
-+ System logs
+## Future Plans
 
-+ Config cli tool available to change settings without need to edit .bashrc file directly. (Exported vars?) 
-
-+ Study the rewrite everything in C++ possibility if that makes a bug performance change. (Performance is fine right now) 
-
-+ Find if there is efficient way to use RAM storage (tmpfs alike) in Termux no root. 
-
-+ Create installer/uninstaller, bins or packages. (Maybe separate the .bashrc in multiple cli tools?) 
-
-+ Add vim and sh defualt configs.
-
-+ Make richers command set aside @help
+- Enhanced special storage folders
+- Language tutorials in programming folders
+- Auto-update and version tracking
+- Dependency manager
+- Config CLI tool (no direct .bashrc editing)
+- Vim/sh default configs
+- Richer command set beyond `@help`
