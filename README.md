@@ -2,6 +2,9 @@
 
 Enhanced `.bashrc` with unique tools, organized filesystem, and built-in code execution. Designed for Termux and Linux.
 
+![smbse_screnshot](https://github.com/user-attachments/assets/d2022899-3534-4216-898b-9b426f477939)
+
+
 ## Installation
 
 ```bash
